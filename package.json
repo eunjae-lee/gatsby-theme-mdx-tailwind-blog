@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-mdx-blog",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,7 @@
     "tailwind:build": "yarn workspace tailwind build",
     "release:prepare": "shipjs prepare",
     "release:trigger": "shipjs release",
+    "build": "echo \"Nothing to build\"",
     "test": "echo \"Error: no test specified\""
   },
   "author": "Eunjae Lee <karis612@gmail.com> (https://github.com/eunjae-lee)",

@@ -5694,6 +5694,24 @@ gatsby-telemetry@^1.1.11:
     stack-utils "1.0.2"
     uuid "3.3.2"
 
+gatsby-theme-mdx-blog@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-mdx-blog/-/gatsby-theme-mdx-blog-0.0.1.tgz#08c87e4c246982ea5d04f8d34b23e8432b9ae919"
+  integrity sha512-7HUJ9y1iOjCXeA/gQPwe55nkmZ0KhEvfdr5HuvCYyQRxWQYng0YDBSPJxSlBk0NQQZI50EpBpBbtUVXFHpkC4g==
+  dependencies:
+    "@mdx-js/mdx" "^1.2.2"
+    "@mdx-js/react" "^1.2.2"
+    gatsby-plugin-mdx "^1.0.23"
+    gatsby-plugin-page-creator "^2.1.5"
+    gatsby-plugin-sharp "^2.2.18"
+    gatsby-remark-images "^3.1.19"
+    gatsby-remark-prismjs "^3.3.11"
+    gatsby-source-filesystem "^2.1.9"
+    gatsby-transformer-sharp "^2.2.12"
+    prismjs "^1.17.1"
+    prop-types "^15.7.2"
+    react-helmet "^5.2.1"
+
 gatsby-transformer-sharp@^2.2.12:
   version "2.2.12"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.2.12.tgz#f72efff24b511b2c209645c1373dbced5538b98d"

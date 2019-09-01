@@ -4,8 +4,8 @@ module.exports = {
     'packages/gatsby-theme-mdx-blog/package.json',
     'packages/gatsby-theme-mdx-tailwind-blog/package.json',
   ],
-  publishCommand: () =>
-    `(cd packages/gatsby-theme-mdx-blog && npm publish) && (cd packages/gatsby-theme-mdx-tailwind-blog && npm publish)`,
+  publishCommand: ({ defaultCommand }) =>
+    `(cd packages/gatsby-theme-mdx-blog && ${defaultCommand}) && (cd packages/gatsby-theme-mdx-tailwind-blog && ${defaultCommand})`,
   versionUpdated: ({ version, dir, exec }) => {
     exec(
       `npx json -I -f examples/blog/package.json -e 'this.dependencies["gatsby-theme-mdx-blog"] = "${version}"'`
