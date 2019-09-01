@@ -1,0 +1,9 @@
+.gatsby-highlight {
+  margin: 1rem 0;
+  font-size: 0.8rem;
+}
+
+.gatsby-highlight pre[class*='language-'] {
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
