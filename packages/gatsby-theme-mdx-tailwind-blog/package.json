@@ -13,9 +13,7 @@
   },
   "dependencies": {
     "gatsby-plugin-postcss": "^2.1.5",
-    "gatsby-plugin-purgecss": "^4.0.1"
-  },
-  "devDependencies": {
+    "gatsby-plugin-purgecss": "^4.0.1",
     "autoprefixer": "^9.6.1",
     "tailwindcss": "^1.1.2"
   }
