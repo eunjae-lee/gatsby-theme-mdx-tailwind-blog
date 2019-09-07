@@ -10,7 +10,10 @@ function Layout(props) {
   const isPostContext = Boolean(pageContext);
   return (
     <LayoutWrapper>
-      <SEO title={frontmatter.title || title} />
+      <SEO
+        title={frontmatter.title || title}
+        description={frontmatter.description}
+      />
       <Header />
       {isPostContext ? (
         <PostWrapper {...props}>{children}</PostWrapper>

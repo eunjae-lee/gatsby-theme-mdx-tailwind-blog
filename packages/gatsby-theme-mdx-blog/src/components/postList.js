@@ -7,6 +7,7 @@ export default ({ data }) =>
       <h1>
         <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
       </h1>
+      <p>{node.frontmatter.description}</p>
       <footer>
         <p>{node.frontmatter.date}</p>
       </footer>

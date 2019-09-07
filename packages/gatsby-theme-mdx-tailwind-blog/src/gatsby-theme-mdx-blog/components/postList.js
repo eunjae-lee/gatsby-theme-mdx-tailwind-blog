@@ -9,7 +9,7 @@ export default ({ data }) => (
           <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
         </h1>
         <p className="text-lg text-gray-600">
-          {node.excerpt}
+          {node.frontmatter.description || node.excerpt}
           <Link to={node.fields.slug} className="ml-2 text-blue-600">
             Read →
           </Link>
