@@ -8,6 +8,7 @@ module.exports = {
     const updateVersion = (filePath, expression) =>
       exec(`npx json -I -f ${filePath} -e '${expression} = "${version}"'`);
 
+    updateVersion('package.json', 'this.version');
     updateVersion(
       'examples/blog/package.json',
       'this.dependencies["gatsby-theme-mdx-blog"]'
