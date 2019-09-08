@@ -6878,7 +6878,26 @@ inquirer@3.3.0:
     strip-ansi "^4.0.0"
     through "^2.3.6"
 
-inquirer@6.5.1, inquirer@^6.2.0, inquirer@^6.2.2:
+inquirer@7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-7.0.0.tgz#9e2b032dde77da1db5db804758b8fea3a970519a"
+  integrity sha512-rSdC7zelHdRQFkWnhsMu2+2SO41mpv2oF2zy4tMhmiLWkcKbOAs87fWAJhVXttKVwhdZvymvnuM95EyEXg2/tQ==
+  dependencies:
+    ansi-escapes "^4.2.1"
+    chalk "^2.4.2"
+    cli-cursor "^3.1.0"
+    cli-width "^2.0.0"
+    external-editor "^3.0.3"
+    figures "^3.0.0"
+    lodash "^4.17.15"
+    mute-stream "0.0.8"
+    run-async "^2.2.0"
+    rxjs "^6.4.0"
+    string-width "^4.1.0"
+    strip-ansi "^5.1.0"
+    through "^2.3.6"
+
+inquirer@^6.2.0, inquirer@^6.2.2:
   version "6.5.1"
   resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-6.5.1.tgz#8bfb7a5ac02dac6ff641ac4c5ff17da112fcdb42"
   integrity sha512-uxNHBeQhRXIoHWTSNYUFhQVrHYFThIt6IVo2fFmSe8aBwdR3/w6b58hJpiL/fMukFkvGzjg+hSxFtwvVmKZmXw==
@@ -11428,20 +11447,20 @@ shelljs@0.8.3:
     interpret "^1.0.0"
     rechoir "^0.6.2"
 
-shipjs-lib@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/shipjs-lib/-/shipjs-lib-0.4.0.tgz#c1c49cd1b8456799a232e5fe2d7f27d1c62aa6c7"
-  integrity sha512-ljLdHWponRcGghXQN6aoIVkOs9shQiggKyv8MESUbvn3dQCOmY+rOyskATVgR4hXDjssd7ySdosX2MWPeese1Q==
+shipjs-lib@0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/shipjs-lib/-/shipjs-lib-0.5.0.tgz#bba59475d3ffc191d1cb63ee1230ea770e19f568"
+  integrity sha512-JE1ALudraQ+Uv2zkvz4p2KQLCptA2YvDsiXURCCJbasUo88eFYrabpiF04HUo3rWvjy/8nfQ30FYWklwqSikwQ==
   dependencies:
     dotenv "^8.1.0"
     parse-github-url "1.0.2"
     semver "6.3.0"
     shelljs "0.8.3"
 
-shipjs@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/shipjs/-/shipjs-0.4.0.tgz#ccc37267cf8d77fead38e7bd75f531d8c0e29bca"
-  integrity sha512-8F1/DM+4r6DHs/3XR20zHCtSIZeaSDlGulnKukXcYVqBGMDi+V0Lo6roD6vhFx+qMm5ZyOOPjrEWV1JNDdqPCA==
+shipjs@0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/shipjs/-/shipjs-0.5.0.tgz#3ef87e510886207ea960b5915d90a53983956d34"
+  integrity sha512-+3mSvzTY4KK5YlBh75zlYig9qqsuzuEapvu6tgMh213hafW0ZYveoUlqvjgzfYbHPonhnsqDyHXnjhVoHARQlQ==
   dependencies:
     "@slack/webhook" "^5.0.1"
     arg "4.1.1"
@@ -11449,8 +11468,8 @@ shipjs@^0.4.0:
     change-case "3.1.0"
     conventional-changelog-cli "2.0.23"
     esm "3.2.25"
-    inquirer "6.5.1"
-    shipjs-lib "0.4.0"
+    inquirer "7.0.0"
+    shipjs-lib "0.5.0"
     temp-write "4.0.0"
 
 sift@^5.1.0:
