@@ -9,7 +9,7 @@
     "blog:build": "yarn workspace blog build",
     "tailwind:build": "yarn workspace tailwind build",
     "release:prepare": "shipjs prepare",
-    "release:trigger": "shipjs release",
+    "release:trigger": "shipjs trigger",
     "build": "echo \"Nothing to build\"",
     "test": "echo \"Error: no test specified\""
   },
@@ -21,6 +21,6 @@
     "examples/*"
   ],
   "devDependencies": {
-    "shipjs": "^0.4.0"
+    "shipjs": "0.5.0"
   }
 }

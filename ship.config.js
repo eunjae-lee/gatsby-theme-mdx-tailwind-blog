@@ -1,17 +1,20 @@
 module.exports = {
-  filesToBump: [
-    'package.json',
-    'packages/gatsby-theme-mdx-blog/package.json',
-    'packages/gatsby-theme-mdx-tailwind-blog/package.json',
-  ],
-  publishCommand: ({ defaultCommand }) =>
-    `(cd packages/gatsby-theme-mdx-blog && ${defaultCommand}) && (cd packages/gatsby-theme-mdx-tailwind-blog && ${defaultCommand})`,
+  monorepo: {
+    readVersionFrom: 'package.json',
+    packagesToBump: ['packages/*', 'examples/*'],
+    packagesToPublish: ['packages/*'],
+  },
   versionUpdated: ({ version, dir, exec }) => {
-    exec(
-      `npx json -I -f examples/blog/package.json -e 'this.dependencies["gatsby-theme-mdx-blog"] = "${version}"'`
+    const updateVersion = (filePath, expression) =>
+      exec(`npx json -I -f ${filePath} -e '${expression} = "${version}"'`);
+
+    updateVersion(
+      'examples/blog/package.json',
+      'this.dependencies["gatsby-theme-mdx-blog"]'
     );
-    exec(
-      `npx json -I -f examples/tailwind/package.json -e 'this.dependencies["gatsby-theme-mdx-tailwind-blog"] = "${version}"'`
+    updateVersion(
+      'examples/tailwind/package.json',
+      'this.dependencies["gatsby-theme-mdx-tailwind-blog"]'
     );
   },
 };
