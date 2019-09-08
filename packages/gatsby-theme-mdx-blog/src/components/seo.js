@@ -11,6 +11,10 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 function SEO({ description, lang, meta, title }) {
+  if (!title) {
+    console.warn('`title` is missing in this page.');
+  }
+
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -35,7 +39,7 @@ function SEO({ description, lang, meta, title }) {
       title={
         title === site.siteMetadata.title
           ? title
-          : `${title} | ${site.siteMetadata.title}`
+          : [title, site.siteMetadata.title].filter(Boolean).join(' | ')
       }
       meta={[
         {
