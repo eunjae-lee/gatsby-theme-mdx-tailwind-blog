@@ -44,7 +44,12 @@ export default () => (
           />
           <div className="ml-4 mt-2">
             <p className="text-base text-gray-700">{author}</p>
-            <p className="text-sm text-gray-700">{description}</p>
+            <p className="text-sm text-gray-700">
+              {description}{' '}
+              <Link to="/about" className="text-blue-600">
+                More →
+              </Link>
+            </p>
           </div>
         </div>
       </>

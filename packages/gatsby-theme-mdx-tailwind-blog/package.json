@@ -9,7 +9,7 @@
   "author": "Eunjae Lee <karis612@gmail.com> (https://github.com/eunjae-lee)",
   "license": "MIT",
   "peerDependencies": {
-    "gatsby": "^2.13.82"
+    "gatsby": "^2.13.57"
   },
   "dependencies": {
     "gatsby-plugin-postcss": "^2.1.5",
