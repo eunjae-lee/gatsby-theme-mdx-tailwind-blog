@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Eunjae Lee <karis612@gmail.com> (https://github.com/eunjae-lee)",
+  "homepage": "https://github.com/eunjae-lee/gatsby-theme-mdx-tailwind-blog/blob/master/README.md",
   "license": "MIT",
   "peerDependencies": {
     "gatsby": "^2.13.57"
