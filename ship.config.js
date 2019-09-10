@@ -1,3 +1,6 @@
+const path = require('path');
+const fs = require('fs');
+
 module.exports = {
   monorepo: {
     readVersionFrom: 'package.json',
@@ -5,17 +8,15 @@ module.exports = {
     packagesToPublish: ['packages/*'],
   },
   versionUpdated: ({ version, dir, exec }) => {
-    const updateVersion = (filePath, expression) =>
-      exec(`npx json -I -f ${filePath} -e '${expression} = "${version}"'`);
+    // update package.json
+    const packageJsonPath = path.resolve(dir, 'package.json');
+    const json = {
+      ...JSON.parse(fs.readFileSync(packageJsonPath).toString()),
+      version,
+    };
+    fs.writeFileSync(packageJsonPath, JSON.stringify(json, null, 2));
 
-    updateVersion('package.json', 'this.version');
-    updateVersion(
-      'examples/blog/package.json',
-      'this.dependencies["gatsby-theme-mdx-blog"]'
-    );
-    updateVersion(
-      'examples/tailwind/package.json',
-      'this.dependencies["gatsby-theme-mdx-tailwind-blog"]'
-    );
+    // update dependency in the example
+    exec(`yarn workspace blog add gatsby-theme-mdx-tailwind-blog@${version}`);
   },
 };
