@@ -19,6 +19,6 @@
     "examples/*"
   ],
   "devDependencies": {
-    "shipjs": "0.5.0"
+    "shipjs": "0.5.1"
   }
 }
