@@ -19,4 +19,5 @@ module.exports = {
     // update dependency in the example
     exec(`yarn workspace blog add gatsby-theme-mdx-tailwind-blog@${version}`);
   },
+  buildCommand: () => `cp README.md packages/gatsby-theme-mdx-tailwind-blog/`,
 };
