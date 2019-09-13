@@ -6,7 +6,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-theme-mdx-blog`,
-    `gatsby-theme-mdx-tailwind-blog`,
+    { resolve: `gatsby-theme-mdx-tailwind-blog`, options: null },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
