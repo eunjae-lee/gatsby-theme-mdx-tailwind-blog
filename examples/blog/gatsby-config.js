@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
     title: `Tailwind CSS example`,
@@ -6,7 +8,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-theme-mdx-blog`,
-    { resolve: `gatsby-theme-mdx-tailwind-blog`, options: null },
+    `gatsby-theme-mdx-tailwind-blog`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

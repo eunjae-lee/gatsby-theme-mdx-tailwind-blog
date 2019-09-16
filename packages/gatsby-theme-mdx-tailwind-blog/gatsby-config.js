@@ -1,4 +1,6 @@
-module.exports = ({ purgecss }) => ({
+const path = require('path');
+
+module.exports = ({ purgecss = {} }) => ({
   plugins: [
     {
       resolve: `gatsby-plugin-postcss`,
@@ -8,17 +10,17 @@ module.exports = ({ purgecss }) => ({
         },
       },
     },
-    purgecss === null
-      ? null
-      : {
-          resolve: `gatsby-plugin-purgecss`,
-          options: Object.assign(
-            {
-              tailwind: true,
-              purgeOnly: [`src/css/style.css`],
-            },
-            purgecss
-          ),
-        },
-  ].filter(Boolean),
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        tailwind: true,
+        purgeOnly: [...(purgecss.purgeOnly || [])],
+        content: [
+          path.join(__dirname, 'src/**/!(*.d).{ts,js,jsx,tsx}'),
+          path.join(process.cwd(), 'src/**/!(*.d).{ts,js,jsx,tsx}'),
+          ...(purgecss.content || []),
+        ],
+      },
+    },
+  ],
 });
