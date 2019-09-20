@@ -1,0 +1,71 @@
+---
+title: 'Scheduled Scraping on Nelify using Zapier'
+description: 'How I schedule scraping things and commit them back to git repository.'
+date: '2019-01-06T04:56:07.448Z'
+---
+
+Recently I had a thing. I wanted to
+
+- Scrape things every midnight
+- Commit the result into the repository (and push to the remote, of course)
+- Build the website (it's on gatsby)
+
+So this post will briefly guide you how I went through those.
+
+### 1. Triggering deployment with webhook
+
+Netlify provides a webhook endpoint. Zapier triggers it every midnight. I've followed the steps from [this post](https://flaviocopes.com/netlify-auto-deploy/).
+
+### 2. Scraping things
+
+When the webhook is triggered, Netlify executes the deployment script(for example, `yarn build`). By the way, the timeout is [15 minutes](https://www.netlify.com/blog/2016/10/18/how-our-build-bots-build-sites/).
+
+### 3. commit && push
+
+Let's say scrapper has dropped the result at `data/2019-01-01.json`. I want to commit and push the change. When this deployment was made by Netlify, it checked out the repository in a `detached head state`. So we need to do a few things in order to properly make a commit on `master` branch.
+
+```bash
+git config --global user.email "my-email@address.com"
+git config --global user.name "my-user-name"
+git checkout master
+git pull https://$MY_GIT_USERNAME:$MY_GIT_PASSWORD@github.com:your/project.git master
+
+run_some_scraping_here
+
+git add data/*
+git commit -m "add new data @ netlify"
+git push https://$MY_GIT_USERNAME:$MY_GIT_PASSWORD@github.com:your/project.git master
+```
+
+First I set git config so that commit can be made with correct information(By default, there's none, so commit fails).
+
+And to access my git repository, I set `MY_GIT_USERNAME` and `MY_GIT_PASSWORD` at [Build Environment Variables on Netlify](https://www.netlify.com/docs/continuous-deployment/#build-environment-variables). Don't ever commit this info into your git repository.
+
+At first, I'm in a detached head state, so I need to `git checkout master` before making any commit. And `git pull` to make sure I'm on the latest version. When I was testing, after `git checkout master`, the master branch was still pointing to an old commit. I guess it's because of some caching issue.
+
+After making the local branch up-to-date, you can run some scraping job. And stage, commit and push the change.
+
+And now you can go on with building your website with the recently scrapped data.
+
+### 4. One more thing,
+
+When I just pushed the new commit to my remote repository, it just triggered another deployment at Netlify! That's totally unnecessary. So if I managed to push new commit, then current deployment may just stop there so that new deployment will cover it.
+
+```bash
+git commit -m "add new data @ netlify"
+
+if [ $? -eq 0 ]
+then
+  # New data added, so let's push and just quit this deploy.
+  # This push will trigger new deployment.
+  git push https://$MY_GIT_USERNAME:$MY_GIT_PASSWORD@github.com:your/project.git master
+  exit 1
+else
+  # nothing added, let's keep continuing.
+  exit 0
+fi
+```
+
+So that's what I've done. With this way, if there's any new commit, it will push and just exit with non-zero code, stopping the current deployment and triggering new fresh deployment by push. If there's nothing newly committed, it goes on with the current deployment.
+
+This will cover both midnight scheduled deployment and usual deployment triggered by my own `git push`.

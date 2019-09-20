@@ -2,9 +2,9 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: `Tailwind CSS example`,
+    title: `eunjae.dev`,
     author: `Eunjae Lee`,
-    description: `This is an example with Tailwind CSS.`,
+    description: `Software Engineer @ Algolia`,
   },
   plugins: [
     `gatsby-theme-mdx-blog`,

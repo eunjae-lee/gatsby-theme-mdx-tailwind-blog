@@ -3,3 +3,35 @@
 @tailwind components;
 
 @tailwind utilities;
+
+article p > code.language-text {
+  color: #b95c1f;
+  font-weight: 300;
+  border: 1px solid #bdbdbd;
+  border-radius: 0.25rem;
+  padding: 0.1rem 0.25rem;
+  margin: 0 0.25rem;
+  background: none;
+  font-size: 0.8rem;
+}
+
+article p > code.language-text::selection {
+  background: #accef7;
+}
+
+.gatsby-highlight {
+  margin: 1rem 0;
+  font-size: 0.8rem;
+}
+
+.gatsby-highlight pre[class*='language-'] {
+  border-radius: 0.25rem;
+  padding: 1.5rem;
+}
+
+.gatsby-highlight code {
+  color: inherit;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
