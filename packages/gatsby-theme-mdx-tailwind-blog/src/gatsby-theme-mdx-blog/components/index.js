@@ -3,10 +3,14 @@ import { Link } from 'gatsby';
 import Layout from './layout';
 
 export default ({ data }) => {
+  const edgesExceptAbout = data.allMdx.edges.filter(
+    ({ node }) => node.fields.slug !== '/about'
+  );
+
   return (
     <Layout title={data.site.siteMetadata.title}>
       <section className="p-4 md:p-8">
-        {data.allMdx.edges.map(({ node }) => (
+        {edgesExceptAbout.map(({ node }) => (
           <article key={node.fields.slug} className="mb-16">
             <h1 className="text-2xl text-gray-800 mb-2">
               <Link to={node.fields.slug}>
