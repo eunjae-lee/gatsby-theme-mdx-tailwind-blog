@@ -32,16 +32,16 @@ function Layout(props) {
         }) => (
           <header>
             <h1
-              className={`pt-10 pl-8 pr-8 text-xl text-gray-800 ${
+              className={`pt-10 px-4 md:px-8 text-xl text-gray-800 ${
                 isPostContext ? 'font-base' : 'font-bold'
               }`}
             >
               <Link to="/">{author}</Link>
             </h1>
-            <div className="px-8 pb-4">
+            <div className="px-4 md:px-8 pb-4">
               <p className="text-base text-gray-700 font-light">
                 {description}
-                <span className="px-2 text-gray-500">|</span>
+                <span className="px-4 text-gray-500">|</span>
                 <Link to="/about" className="text-blue-700 hover:text-blue-500">
                   More
                 </Link>
@@ -50,7 +50,7 @@ function Layout(props) {
           </header>
         )}
       />
-      <hr className="m-8" />
+      <hr className="m-4 md:mx-8" />
       {isPostContext ? (
         <Post {...props}>{children}</Post>
       ) : (

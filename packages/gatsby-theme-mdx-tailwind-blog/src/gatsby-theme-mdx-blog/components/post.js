@@ -56,8 +56,8 @@ export default ({
         ol: tagWithClassName('ol', 'list-decimal ml-4'),
       }}
     >
-      <article className="mt-16 ml-8 mr-8 mb-16">
-        <h2 className="text-2xl text-gray-800 font-extrabold">{title}</h2>
+      <article className="mt-8 mx-4 break-words md:mt-12 md:mx-8 mb-16">
+        <h2 className="text-2xl text-gray-800 font-extrabold mb-2">{title}</h2>
         <p className="text-lg text-gray-800 mb-16 font-light">{description}</p>
         {children}
       </article>

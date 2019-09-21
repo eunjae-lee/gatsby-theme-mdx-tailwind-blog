@@ -9,7 +9,7 @@ article p > code.language-text {
   font-weight: 300;
   border: 1px solid #bdbdbd;
   border-radius: 0.25rem;
-  padding: 0.1rem 0.25rem;
+  padding: 0.1rem 0.375rem;
   margin: 0 0.25rem;
   background: none;
   font-size: 0.8rem;
@@ -17,6 +17,17 @@ article p > code.language-text {
 
 article p > code.language-text::selection {
   background: #accef7;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: #2b2b2b;
+  overflow-x: scroll;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  color: #bdbdbd;
 }
 
 .gatsby-highlight {
@@ -34,4 +45,14 @@ article p > code.language-text::selection {
   border: 0;
   padding: 0;
   margin: 0;
+}
+
+@media (max-width: 640px) {
+  .gatsby-highlight {
+    margin: 1rem -1rem;
+  }
+
+  .gatsby-highlight pre[class*='language-'] {
+    border-radius: 0;
+  }
 }

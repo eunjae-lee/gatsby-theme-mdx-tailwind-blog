@@ -5,10 +5,10 @@ import Layout from './layout';
 export default ({ data }) => {
   return (
     <Layout title={data.site.siteMetadata.title}>
-      <section className="p-8">
+      <section className="p-4 md:p-8">
         {data.allMdx.edges.map(({ node }) => (
           <article key={node.fields.slug} className="mb-16">
-            <h1 className="text-2xl text-gray-800">
+            <h1 className="text-2xl text-gray-800 mb-2">
               <Link to={node.fields.slug}>
                 {node.frontmatter.title}{' '}
                 <span className="text-sm text-blue-700 font-light">→</span>
