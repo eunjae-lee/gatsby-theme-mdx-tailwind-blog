@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "",
   "main": "index.js",
   "private": true,
@@ -15,7 +15,7 @@
     "gatsby": "^2.13.57",
     "gatsby-image": "^2.2.15",
     "gatsby-theme-mdx-blog": "0.0.6",
-    "gatsby-theme-mdx-tailwind-blog": "0.0.6",
+    "gatsby-theme-mdx-tailwind-blog": "0.0.7",
     "prism-themes": "^1.1.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
