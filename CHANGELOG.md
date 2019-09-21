@@ -1,3 +1,12 @@
+## [0.0.7](https://github.com/eunjae-lee/gatsby-theme-mdx-tailwind-blog/compare/v0.0.6...v0.0.7) (2019-09-21)
+
+
+### Bug Fixes
+
+* purgecss config ([8343ccc](https://github.com/eunjae-lee/gatsby-theme-mdx-tailwind-blog/commit/8343ccc))
+
+
+
 ## [0.0.6](https://github.com/eunjae-lee/gatsby-theme-mdx-tailwind-blog/compare/v0.0.5...v0.0.6) (2019-09-13)
 
 
