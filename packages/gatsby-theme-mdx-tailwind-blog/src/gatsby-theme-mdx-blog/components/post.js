@@ -58,7 +58,10 @@ export default ({
     >
       <article className="mt-8 mx-4 break-words md:mt-12 md:mx-8 mb-16">
         <h2 className="text-2xl text-gray-800 font-extrabold mb-2">{title}</h2>
-        <p className="text-lg text-gray-800 mb-16 font-light">{description}</p>
+        <p className="text-lg text-gray-800 font-light mb-3">{description}</p>
+        <p className="text-sm text-gray-600 font-thin mb-16">
+          {new Date(date).toDateString()}
+        </p>
         {children}
       </article>
     </MDXProvider>
