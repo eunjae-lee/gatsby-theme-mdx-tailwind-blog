@@ -57,8 +57,8 @@ export default ({
       }}
     >
       <article className="mt-16 ml-8 mr-8 mb-16">
-        <h2 className="text-xl text-gray-800">{title}</h2>
-        <p className="text-lg text-gray-600 mb-16 font-light">{description}</p>
+        <h2 className="text-2xl text-gray-800 font-extrabold">{title}</h2>
+        <p className="text-lg text-gray-800 mb-16 font-light">{description}</p>
         {children}
       </article>
     </MDXProvider>
