@@ -9,16 +9,16 @@ export default ({ data }) => {
 
   return (
     <Layout title={data.site.siteMetadata.title}>
-      <section className="p-4 md:p-8">
+      <section className="px-8 py-4 md:py-8">
         {edgesExceptAbout.map(({ node }) => (
-          <article key={node.fields.slug} className="mb-16">
-            <h1 className="text-2xl text-gray-800 mb-2">
+          <article key={node.fields.slug} className="mb-24">
+            <h1 className="text-2r text-gray-800 leading-snug mb-2">
               <Link to={node.fields.slug}>
                 {node.frontmatter.title}{' '}
-                <span className="text-sm text-blue-700 font-light">→</span>
+                <span className="text-2xl text-gray-400 font-thin ml-1">→</span>
               </Link>
             </h1>
-            <p className="text-lg text-gray-800 font-light">
+            <p className="text-xl text-gray-800 font-light">
               {node.frontmatter.description || node.excerpt}
             </p>
           </article>

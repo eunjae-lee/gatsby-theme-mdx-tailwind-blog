@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 
 const tagWithClassName = (Tag, className) => ({ children, ...props }) => (
@@ -18,27 +19,27 @@ export default ({
       components={{
         h1: tagWithClassName(
           'h1',
-          'text-gray-800 mt-8 mb-4 -ml-1 text-xl font-extrabold tracking-wider'
+          'text-gray-800 mt-12 mb-4 -ml-1 text-xl font-extrabold tracking-wider'
         ),
         h2: tagWithClassName(
           'h2',
-          'text-gray-800 mt-8 mb-4 -ml-1 text-xl font-bold tracking-wide'
+          'text-gray-800 mt-12 mb-4 -ml-1 text-xl font-bold tracking-wide'
         ),
         h3: tagWithClassName(
           'h3',
-          'text-gray-800 mt-8 mb-4 -ml-1 text-lg font-bold'
+          'text-gray-800 mt-12 mb-4 -ml-1 text-lg font-bold'
         ),
         h4: tagWithClassName(
           'h4',
-          'text-gray-800 mt-8 mb-4 -ml-1 text-lg font-semibold'
+          'text-gray-800 mt-12 mb-4 -ml-1 text-lg font-semibold'
         ),
         h5: tagWithClassName(
           'h5',
-          'text-gray-800 mt-8 mb-4 -ml-1 text-lg font-medium'
+          'text-gray-800 mt-12 mb-4 -ml-1 text-lg font-medium'
         ),
         h6: tagWithClassName(
           'h6',
-          'text-gray-800 mt-8 mb-4 -ml-1 text-base font-semibold'
+          'text-gray-800 mt-12 mb-4 -ml-1 text-base font-semibold'
         ),
         p: tagWithClassName(
           'p',
@@ -56,15 +57,26 @@ export default ({
         ol: tagWithClassName('ol', 'list-decimal ml-4'),
       }}
     >
-      <article className="mt-8 mx-4 break-words md:mt-12 md:mx-8 mb-16">
-        <h2 className="text-2xl text-gray-800 font-extrabold mb-2">{title}</h2>
-        <p className="text-lg text-gray-800 font-light mb-3">{description}</p>
+      <article className="m-8 break-words md:mt-12 mb-16">
+        <p className="mb-4">
+          <Link to="/" className="text-2xl text-gray-700 font-thin">
+            ←
+          </Link>
+        </p>
+        <h2 className="text-3xl text-gray-800 font-medium leading-snug mb-2">
+          {title}
+        </h2>
+        <p className="text-lg text-gray-800 font-light mb-2">{description}</p>
         {date && (
-          <p className="text-sm text-gray-600 font-thin mb-16">
-            {new Date(date).toDateString()}
+          <p className="text-xs text-gray-500 font-thin">
+            {new Date(date).toLocaleDateString(undefined, {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
           </p>
         )}
-        {children}
+        <div className="mt-24">{children}</div>
       </article>
     </MDXProvider>
   );
