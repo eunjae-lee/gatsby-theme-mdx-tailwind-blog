@@ -1,5 +1,7 @@
 # gatsby-theme-mdx-tailwind-blog
 
+[LIVE DEMO](https://gatsby-theme-mdx-tailwind-blog.netlify.com)
+
 ## Installation
 
 This theme is based on [gatsby-theme-mdx-blog](https://github.com/eunjae-lee/gatsby-theme-mdx-blog).
