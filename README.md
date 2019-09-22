@@ -2,6 +2,8 @@
 
 [LIVE DEMO](https://gatsby-theme-mdx-tailwind-blog.netlify.com)
 
+> This is beta. Things including the style may change without bumping the major version.
+
 ## Installation
 
 This theme is based on [gatsby-theme-mdx-blog](https://github.com/eunjae-lee/gatsby-theme-mdx-blog).
