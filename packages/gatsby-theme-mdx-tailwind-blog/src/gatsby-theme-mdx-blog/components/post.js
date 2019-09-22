@@ -53,11 +53,14 @@ export default ({
           'blockquote',
           'border-solid border-l-4 border-gray-300 pl-4'
         ),
-        ul: tagWithClassName('ul', 'list-disc ml-4'),
-        ol: tagWithClassName('ol', 'list-decimal ml-4'),
+        ul: tagWithClassName('ul', 'list-disc m-4'),
+        ol: tagWithClassName('ol', 'list-decimal m-4'),
+        li: tagWithClassName('li', 'text-gray-800 font-light my-1'),
+        strong: tagWithClassName('strong', 'font-semibold'),
+        em: tagWithClassName('em', 'italic'),
       }}
     >
-      <article className="m-8 break-words md:mt-12 mb-16">
+      <article className="post m-8 break-words md:mt-12 mb-16">
         <p className="mb-4">
           <Link to="/" className="text-2xl text-gray-700 font-thin">
             ←

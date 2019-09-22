@@ -41,9 +41,19 @@ pre[class*='language-'] {
   margin: 0;
 }
 
+.post li > p {
+  margin-bottom: 0;
+}
+
+.post li > ul,
+.post li > ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 @media (max-width: 640px) {
   .gatsby-highlight {
-    margin: 1rem -1rem;
+    margin: 1rem -2rem;
   }
 
   .gatsby-highlight pre[class*='language-'] {
