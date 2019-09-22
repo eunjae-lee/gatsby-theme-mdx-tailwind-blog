@@ -40,6 +40,16 @@ or
 
 `src/pages/your-post/index.mdx`
 
+At the frontmatter section, you need the following:
+
+```
+---
+title: 'Title of the post'
+description: 'Description of the post'
+date: 'Date Timestamp'
+---
+```
+
 ### `/about` page
 
 This theme has a link to `/about` page in the header.
