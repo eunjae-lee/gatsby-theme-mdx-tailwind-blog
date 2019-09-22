@@ -1,6 +1,8 @@
+const tailwindcss = require('tailwindcss');
 const path = require('path');
 
 module.exports = ({
+  tailwind: { configPath = `${__dirname}/tailwind.config.js` } = {},
   purgeCSS: {
     purgeOnly = [path.join(__dirname, 'src/css/tailwind.css')],
     content = [],
@@ -10,9 +12,7 @@ module.exports = ({
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
-        config: {
-          path: `${__dirname}/postcss.config.js`,
-        },
+        postCssPlugins: [tailwindcss(configPath), require('autoprefixer')],
       },
     },
     {
