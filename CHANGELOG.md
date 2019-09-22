@@ -1,3 +1,12 @@
+## [0.0.10](https://github.com/eunjae-lee/gatsby-theme-mdx-tailwind-blog/compare/v0.0.9...v0.0.10) (2019-09-22)
+
+
+### Bug Fixes
+
+* exepose a config to override tailwind config ([780fca3](https://github.com/eunjae-lee/gatsby-theme-mdx-tailwind-blog/commit/780fca3))
+
+
+
 ## [0.0.9](https://github.com/eunjae-lee/gatsby-theme-mdx-tailwind-blog/compare/v0.0.8...v0.0.9) (2019-09-21)
 
 
