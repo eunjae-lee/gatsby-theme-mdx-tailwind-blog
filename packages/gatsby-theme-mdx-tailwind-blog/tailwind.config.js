@@ -1,5 +1,21 @@
 module.exports = {
   theme: {
+    fontFamily: {
+      title: [
+        '-apple-system',
+        'BlinkMacSystemFont',
+        'Segoe UI',
+        'Roboto',
+        'Helvetica Neue',
+        'Arial',
+        'Noto Sans',
+        'sans-serif',
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol',
+        'Noto Color Emoji',
+      ],
+    },
     fontSize: {
       xs: '.75rem',
       sm: '.875rem',

@@ -63,7 +63,7 @@ export default ({
             ←
           </Link>
         </p>
-        <h2 className="text-3xl text-gray-800 font-medium leading-snug mb-2">
+        <h2 className="font-title text-3xl text-gray-800 font-medium leading-snug mb-2">
           {title}
         </h2>
         <p className="text-lg text-gray-800 font-light mb-2">{description}</p>
