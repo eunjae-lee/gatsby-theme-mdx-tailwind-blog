@@ -13,7 +13,6 @@
   "license": "MIT",
   "dependencies": {
     "gatsby": "^2.13.57",
-    "gatsby-image": "^2.2.15",
     "gatsby-theme-mdx-blog": "0.0.6",
     "gatsby-theme-mdx-tailwind-blog": "0.0.10",
     "prism-themes": "^1.1.0",
