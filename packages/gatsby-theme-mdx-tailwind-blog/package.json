@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test:cli": "gatsby-theme-mdx-tailwind-blog",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "gatsby-theme-mdx-tailwind-blog": "./bin/generator.js"
   },
   "author": "Eunjae Lee <karis612@gmail.com> (https://github.com/eunjae-lee)",
   "homepage": "https://github.com/eunjae-lee/gatsby-theme-mdx-tailwind-blog/blob/master/README.md",
@@ -13,9 +17,15 @@
     "gatsby": "^2.13.57"
   },
   "dependencies": {
+    "arg": "^4.1.1",
+    "autoprefixer": "^9.6.1",
+    "chalk": "^2.4.2",
+    "change-case": "^3.1.0",
+    "esm": "^3.2.25",
     "gatsby-plugin-postcss": "^2.1.5",
     "gatsby-plugin-purgecss": "^4.0.1",
-    "autoprefixer": "^9.6.1",
+    "inquirer": "^7.0.0",
+    "shelljs": "^0.8.3",
     "tailwindcss": "^1.1.2"
   }
 }
