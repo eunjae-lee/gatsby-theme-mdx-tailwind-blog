@@ -1,3 +1,7 @@
+## [0.0.13](https://github.com/eunjae-lee/gatsby-theme-mdx-tailwind-blog/compare/v0.0.12...v0.0.13) (2019-09-28)
+
+
+
 ## [0.0.12](https://github.com/eunjae-lee/gatsby-theme-mdx-tailwind-blog/compare/v0.0.11...v0.0.12) (2019-09-28)
 
 
