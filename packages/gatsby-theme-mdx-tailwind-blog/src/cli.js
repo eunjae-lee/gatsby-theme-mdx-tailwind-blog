@@ -19,15 +19,15 @@ export async function cli(argv) {
     )
   );
 
-  const { projectName } = await inquirer.prompt([
+  const { packageName } = await inquirer.prompt([
     {
       type: 'input',
-      name: 'projectName',
-      message: 'Type the project name:',
+      name: 'packageName',
+      message: 'Type the package name:',
     },
   ]);
-  if (!projectName) {
-    throw new Error('The project name is required.');
+  if (!packageName) {
+    throw new Error('The package name is required.');
   }
   const {
     packageManager,
@@ -70,7 +70,7 @@ export async function cli(argv) {
 
   generate({
     dir,
-    projectName,
+    packageName,
     packageManager,
     installSyntaxHighlightTheme,
     injectSample,
@@ -81,14 +81,14 @@ export async function cli(argv) {
 
 function generate({
   dir,
-  projectName,
+  packageName,
   packageManager,
   installSyntaxHighlightTheme,
   injectSample,
   injectComponents,
   createGitRepo,
 }) {
-  const projectDir = path.resolve(dir, projectName);
+  const projectDir = path.resolve(dir, packageName);
   shell.mkdir(projectDir);
   exec('npm init -y', projectDir);
   const packageJson = JSON.parse(
@@ -139,7 +139,7 @@ export default () => (
     );
     shell.cp(
       '-R',
-      path.resolve(pagesDir, 'create-post-on-gatsby-with-hygen/'),
+      path.resolve(pagesDir, 'post-hygen/'),
       path.resolve(projectDir, 'src', 'pages')
     );
   }
@@ -204,7 +204,7 @@ lerna-debug.log*`
   console.log(chalk.green('Installation complete.'));
   console.log(chalk.cyan('Try the following commands to run your blog:'));
   if (dir === '.') {
-    console.log(`  > cd ${projectName}`);
+    console.log(`  > cd ${packageName}`);
   } else {
     console.log(`  > cd ${projectDir}`);
   }
