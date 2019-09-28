@@ -131,16 +131,7 @@ export default () => (
   );
 
   if (injectSample) {
-    const pagesDir = path.resolve(
-      __dirname,
-      '..',
-      '..',
-      '..',
-      'examples',
-      'blog',
-      'src',
-      'pages'
-    );
+    const pagesDir = path.resolve(__dirname, 'templates', 'pages');
     shell.cp(
       '-R',
       path.resolve(pagesDir, 'first/'),
